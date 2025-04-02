@@ -8,9 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/video.js/dist/video.js"></script>
     <style>
         body {
-            background-color: #001f3f;
+            background: linear-gradient(to right, #001f3f, #003366);
             color: #FFD700;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
         }
@@ -19,12 +19,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 20px;
             border-radius: 10px;
             color: #FFD700;
-            display: none;
-            width: 300px;
+            display: block;
+            width: 320px;
+            box-shadow: 0 0 10px #FFD700;
         }
         .popup button {
             background-color: #FFD700;
@@ -33,17 +34,27 @@
             padding: 10px;
             cursor: pointer;
             width: 100%;
+            font-weight: bold;
+            border-radius: 5px;
         }
         .player-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px #FFD700;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0px 0px 10px #FFD700;
         }
     </style>
 </head>
 <body>
     <h1>IPL 2025 LIVE TV</h1>
     <div class="player-container">
-        <video id="livePlayer" class="video-js vjs-default-skin" controls preload="auto" width="800" height="450">
+        <video id="livePlayer" class="video-js vjs-default-skin" controls preload="auto" width="900" height="500">
             <source src="https://vkvsd250.okcdn.ru/cmaf/8177201777196/sig/j6X5gf0MwQc/srcIp/172.69.95.67/urls/45.136.22.65/expires/1743885970114/clientType/13/srcAg/CHROME/fromCache/1/mid/9469206211372/id/8177201777196/get/hls_9469206211372.VaRDHyXezr0.m3u8" type="application/x-mpegURL">
         </video>
     </div>
@@ -53,9 +64,6 @@
     </div>
     <script>
         var player = videojs('livePlayer');
-        window.onload = function() {
-            document.getElementById('popup').style.display = 'block';
-        }
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
