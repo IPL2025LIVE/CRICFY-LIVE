@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/video.js/dist/video.js"></script>
     <style>
         body {
-            background: linear-gradient(to right, #001f3f, #003366);
+            background: linear-gradient(to right, #001f3f, #00509E);
             color: #FFD700;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -44,6 +44,25 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 15px #FFD700;
+            position: relative;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 5px black;
+            animation: slide 5s linear infinite;
+        }
+        @keyframes slide {
+            0% { left: 100%; }
+            100% { left: -100%; }
         }
         h1 {
             font-size: 2.5rem;
@@ -57,6 +76,7 @@
         <video id="livePlayer" class="video-js vjs-default-skin" controls preload="auto" width="900" height="500">
             <source src="https://vkvsd250.okcdn.ru/cmaf/8177201777196/sig/j6X5gf0MwQc/srcIp/172.69.95.67/urls/45.136.22.65/expires/1743885970114/clientType/13/srcAg/CHROME/fromCache/1/mid/9469206211372/id/8177201777196/get/hls_9469206211372.VaRDHyXezr0.m3u8" type="application/x-mpegURL">
         </video>
+        <div class="overlay-text">🔥 Join @cricfylive for latest updates and live links 🔥</div>
     </div>
     <div id="popup" class="popup">
         <h2>Join @cricfylive</h2>
@@ -64,6 +84,9 @@
     </div>
     <script>
         var player = videojs('livePlayer');
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('popup').style.display = 'block';
+        });
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
