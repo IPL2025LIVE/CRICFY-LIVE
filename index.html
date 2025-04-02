@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2025 LIVE TV</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js/dist/video-js.css">
+    <script src="https://cdn.jsdelivr.net/npm/video.js/dist/video.js"></script>
+    <style>
+        body {
+            background-color: #001f3f;
+            color: #FFD700;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: #FFD700;
+            display: none;
+            width: 300px;
+        }
+        .popup button {
+            background-color: #FFD700;
+            color: #001f3f;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .player-container {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>IPL 2025 LIVE TV</h1>
+    <div class="player-container">
+        <video id="livePlayer" class="video-js vjs-default-skin" controls preload="auto" width="800" height="450">
+            <source src="https://vkvsd250.okcdn.ru/cmaf/8177201777196/sig/j6X5gf0MwQc/srcIp/172.69.95.67/urls/45.136.22.65/expires/1743885970114/clientType/13/srcAg/CHROME/fromCache/1/mid/9469206211372/id/8177201777196/get/hls_9469206211372.VaRDHyXezr0.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+    <div id="popup" class="popup">
+        <h2>Join @cricfylive</h2>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    <script>
+        var player = videojs('livePlayer');
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
